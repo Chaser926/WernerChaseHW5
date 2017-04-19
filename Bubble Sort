@@ -8,16 +8,21 @@ public class bubble
   
   public void bubbleSort()
    {
-    int a = 0;
+    if(head == null)
+    {
+     System.out.print("List is empty");
+     return;
+    }
+    int passes = 0;
       do
       {
      
       Node current = head;
       wasChanged = false;
       
-      System.out.println("What the list looks like after " + a + " pass(es).");
+      System.out.println("What the list looks like after " + passes + " pass(es).");
       print();
-      a++;
+      passes++;
    
       while(current.getNext() != null)
       {
