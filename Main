@@ -1,23 +1,32 @@
+import javax.swing.JOptionPane;
+
 public class Main
 {
   public static void main(String args[])
   {
       bubble list = new bubble();
+      String again = "Yes";
       
-      list.randomizeList();
-      System.out.println("Randomized List: ");
-      list.print();
-      list.bubbleSort();
-      System.out.println("Sorted list: ");
-      list.print();
-      
-      System.out.println("\n Making new list to bubble sort \n");
-      
-      list.randomizeList();
-      System.out.println("Randomized List: ");
-      list.print();
-      list.bubbleSort();
-      System.out.println("Sorted list: ");
-      list.print();       
-  }  
+      while(again.equalsIgnoreCase("Yes"))
+      {
+        list.randomizeList();
+        System.out.println("Randomized List: ");
+        list.print();
+        list.bubbleSort();
+        System.out.println("Sorted list: ");
+        list.print();
+        
+        System.out.println();
+        
+        again = JOptionPane.showInputDialog("Do you want to sort another randomized list? (Answer Yes or No)");
+          while(!again.equalsIgnoreCase("Yes") && !again.equalsIgnoreCase("No"))
+          {
+            if(!again.equalsIgnoreCase("Yes") && !again.equalsIgnoreCase("No"))
+            {
+                again = JOptionPane.showInputDialog("Please answer either yes or no. Do you want to sort another randomized list?");
+            }
+          }
+      }
+  }     
+  
 }
